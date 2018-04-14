@@ -9,10 +9,49 @@ using System.Threading.Tasks;
 
 namespace SlaryReviewCalculationCSharp
 {
+    using SalaryReviewCalculationCSharp;
+    using SalaryReviewCalculationCSharp.HelperClass;
+    using SalaryReviewCalculationCSharp.Model;
+
     class Program
     {
         static void Main(string[] args)
         {
+            
+
+            var devScore = HelperClass.GetDevScore();
+
+            var tlScore = HelperClass.GetTlScore();
+
+            var team1Lead = new Employee() { Name = "Team 1 Lead", Salary = 10, Score = tlScore, Role = EmployeeRole.TeamLead};
+            var team2Lead = new Employee() { Name = "Team 2 Lead", Salary = 100, Score = tlScore, Role = EmployeeRole.TeamLead};
+            var dev12 = new Employee() { Name = "dev12", Salary = 20, Score = devScore, Role = EmployeeRole.Developer};
+
+
+            var dev21 = new Employee() { Name = "dev21", Salary = 30, Score = devScore, Role = EmployeeRole.Developer};
+            var dev22 = new Employee() { Name = "dev22", Salary = 40, Score = tlScore, Role = EmployeeRole.Developer};
+
+            var team1=new Team()
+            {
+                Name = "Team1",
+                TeamLead = team1Lead,
+                Members = new List<Employee>() { dev12 }
+            };
+
+            var team2 = new Team()
+            {
+                Name = "Team2",
+                TeamLead = team2Lead,
+                Members = new List<Employee>() { dev21, dev22 }
+            };
+
+            var employee12Calc = new EmployeeCalculator(dev12);
+            employee12Calc.Print();
+
+            var team2Calc = new TeamCalculator(team2);
+            team2Calc.Print();
+            Console.ReadKey();
+
 
             /*var devScore = new Score
             {
@@ -39,5 +78,7 @@ namespace SlaryReviewCalculationCSharp
             
             Console.ReadLine();*/
         }
+
+        
     }
 }
