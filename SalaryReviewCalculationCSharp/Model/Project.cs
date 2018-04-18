@@ -7,19 +7,14 @@ using System.Threading.Tasks;
 
 namespace SalaryReviewCalculationCSharp.Model
 {
-    public class Project:ModelBase, ICalculable
+    public class Project:SalaryEntity
     {
         public List<Team> Members { get; set; }
-        private ProjectCalculator calculator;
         public Project()
         {
             Members = new List<Team>();
             calculator = new ProjectCalculator(this);
         }
 
-        public void Show()
-        {
-            calculator.Print();
-        }
     }
 }

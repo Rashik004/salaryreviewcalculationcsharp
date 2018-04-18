@@ -9,9 +9,9 @@ namespace SalaryReviewCalculationCSharp.Model
     using SalaryReviewCalculationCSharp.Contract;
     using SlaryReviewCalculationCSharp.Calculator;
 
-    public class Employee:ModelBase, ICalculable
+    public class Employee:SalaryEntity
     {
-        EmployeeCalculator calculator;
+        
         //public Team Team { get; set; }
         public double Salary { get; set; }
         public Score Score { get; set; }
@@ -21,11 +21,6 @@ namespace SalaryReviewCalculationCSharp.Model
         public Employee()
         {
             calculator = new EmployeeCalculator(this);
-        }
-
-        public void Show()
-        {
-            calculator.Print();
         }
 
     }

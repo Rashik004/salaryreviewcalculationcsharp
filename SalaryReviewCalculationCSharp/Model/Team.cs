@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace SalaryReviewCalculationCSharp.Model
 {
-    public class Team : ModelBase, ICalculable
+    public class Team : SalaryEntity
     {
-        private TeamCalculator calculator;
         public Team()
         {
             Members=new List<Employee>();
@@ -19,11 +18,5 @@ namespace SalaryReviewCalculationCSharp.Model
 
         public List<Employee> Members { get; set; }
 
-      
-
-        public void Show()
-        {
-            calculator.Print();
-        }
     }
 }

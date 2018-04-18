@@ -31,6 +31,9 @@ namespace SlaryReviewCalculationCSharp
             var dev21 = new Employee() { Name = "dev21", Salary = 30, Score = devScore, Role = EmployeeRole.Developer};
             var dev22 = new Employee() { Name = "dev22", Salary = 40, Score = tlScore, Role = EmployeeRole.Developer};
 
+
+            var dev31 = new Employee() { Name = "dev31", Salary = 30, Score = devScore, Role = EmployeeRole.Developer };
+            var dev32 = new Employee() { Name = "dev32", Salary = 40, Score = tlScore, Role = EmployeeRole.Developer };
             var team1=new Team()
             {
                 Name = "Team1",
@@ -45,50 +48,35 @@ namespace SlaryReviewCalculationCSharp
                 Members = new List<Employee>() { dev21, dev22 }
             };
 
-            // var employee12Calc = new EmployeeCalculator(dev12);
-            //employee12Calc.Print();
-            dev12.Show();
-            Console.WriteLine();
-            Console.WriteLine();
-            // var team2Calc = new TeamCalculator(team2);
-            //team2Calc.Print();
-            team2.Show();
-            Console.WriteLine();
-            Console.WriteLine();
+            var team3 = new Team()
+            {
+                Name = "Team3",
+                TeamLead = dev31,
+                Members = new List<Employee>() { dev32 }
+            };
+
+
             var project = new Project()
             {
                 Name = "Blockbonds",
-                Members = new List<Team>() { team1, team2 }
+                Members = new List<Team>() { team1, team3 }
 
             };
-            project.Show();
+            var showables = new List<SalaryEntity>();
+            showables.Add(dev12);
+            showables.Add(team2);
+            showables.Add(project);
+            Console.WriteLine("Printing starts");
+            foreach (var showable in showables)
+            {
+                Console.WriteLine();
+                Console.WriteLine();
+                showable.Show();
+            }
             Console.ReadKey();
 
 
-            /*var devScore = new Score
-            {
-                ProblemSolving = 8,
-                YearsOfExperience = 3,
-                LeaderShip = 2,
-                Communication = 7,
-                Decipline = 10
-            };
-
-            var dev1 = new Developer { Name = "Dev 1", TeamName = "GB", Salary = 10000, Score = empScore };
-            var dev2 = new Developer { Name = "Dev 2", TeamName = "GB", Salary = 20000, Score = empScore };
-            var dev3 = new Developer { Name = "Dev 3", TeamName = "GB", Salary = 30000, Score = empScore };
-
-            var tlScore = new Score
-            {
-                ProblemSolving = 8,
-                YearsOfExperience = 5,
-                LeaderShip = 8,
-                Communication = 8,
-                Decipline = 9
-            };
-            var teamLead1 = new TeamLead { Name = "TL 1", ProjectName = "GB", Salary = 40000, Score = tlScore };
             
-            Console.ReadLine();*/
         }
 
         
