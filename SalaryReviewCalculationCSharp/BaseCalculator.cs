@@ -12,6 +12,7 @@ namespace SalaryReviewCalculationCSharp
 
     using SlaryReviewCalculationCSharp.Calculator;
     using SalaryReviewCalculationCSharp.HelperClass;
+    using SalaryReviewCalculationCSharp.Contract;
 
     public abstract class BaseCalculator
     {
@@ -27,5 +28,7 @@ namespace SalaryReviewCalculationCSharp
         }
 
         public abstract void Print();
+
+        public ICalculable calculable;
     }
 }

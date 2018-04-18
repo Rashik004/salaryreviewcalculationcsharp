@@ -45,11 +45,23 @@ namespace SlaryReviewCalculationCSharp
                 Members = new List<Employee>() { dev21, dev22 }
             };
 
-            var employee12Calc = new EmployeeCalculator(dev12);
-            employee12Calc.Print();
+            // var employee12Calc = new EmployeeCalculator(dev12);
+            //employee12Calc.Print();
+            dev12.Show();
+            Console.WriteLine();
+            Console.WriteLine();
+            // var team2Calc = new TeamCalculator(team2);
+            //team2Calc.Print();
+            team2.Show();
+            Console.WriteLine();
+            Console.WriteLine();
+            var project = new Project()
+            {
+                Name = "Blockbonds",
+                Members = new List<Team>() { team1, team2 }
 
-            var team2Calc = new TeamCalculator(team2);
-            team2Calc.Print();
+            };
+            project.Show();
             Console.ReadKey();
 
 

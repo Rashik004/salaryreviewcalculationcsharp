@@ -46,16 +46,18 @@
     <Compile Include="Calculator\Impact.cs" />
     <Compile Include="Calculator\ReviewCalculator.cs" />
     <Compile Include="Calculator\Score.cs" />
+    <Compile Include="Contract\ICalculable.cs" />
     <Compile Include="HelperClass\HelperClass.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\EmployeeCalculator.cs" />
     <Compile Include="Model\EmployeeRole.cs" />
     <Compile Include="Model\ModelBase.cs" />
     <Compile Include="Model\Project.cs" />
+    <Compile Include="Model\ProjectCalculator.cs" />
     <Compile Include="Model\Team.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TeamCalculator.cs" />
+    <Compile Include="Model\TeamCalculator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -18,10 +18,12 @@ namespace SalaryReviewCalculationCSharp
         public override void Print()
         {
             Console.WriteLine($"Review of team {this.team.Name} is given below");
-            Console.WriteLine($"Team Lead review: {CalculateReview(this.team.TeamLead)}");
-            foreach (var member in this.team.Members)
+            Console.WriteLine($"Review of team Lead is ");
+            team.TeamLead.Show();
+            Console.WriteLine($"Review of Members is ");
+            foreach (var employee in team.Members)
             {
-                Console.WriteLine($"Salary of employee {member.Name} is {CalculateReview(member)}");
+                employee.Show();
             }
 
         }
